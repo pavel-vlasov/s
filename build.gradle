@@ -1,0 +1,44 @@
+group 'cronica.io'
+version '1.0-SNAPSHOT'
+
+
+apply plugin: 'java'
+apply plugin: io.byteshifter.plugins.soapui.SoapUIPlugin
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+buildscript {
+    ext {
+        soapUIVersion = '5.4.0'
+    }
+    repositories {
+        jcenter()
+        maven { url 'https://plugins.gradle.org/m2/' }
+        maven { url 'http://smartbearsoftware.com/repository/maven2/' }
+    }
+    dependencies {
+        classpath('gradle.plugin.io.byteshifter:soapui-gradle-plugin:5.3.0.RELEASE')
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+soapui {
+    test {
+        projectFile = 'cronica.io-project.xml'
+        testSuite = 'TestSuite 1'
+        printReport = true
+        junitReport = true
+        outputFolder = "results"
+    }
+}
+
+
+
