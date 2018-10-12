@@ -35,9 +35,9 @@ soapui {
         projectFile = 'cronica.io-project.xml'
         testSuite = 'TestSuite 1'
         printReport = true
+	exportAll = true
         junitReport = true
-	exportall = true
-        outputFolder = "results"
+	outputFolder = "results"
     }
 }
 
