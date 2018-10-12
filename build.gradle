@@ -36,6 +36,7 @@ soapui {
         testSuite = 'TestSuite 1'
         printReport = true
         junitReport = true
+	exportall = true
         outputFolder = "results"
     }
 }
